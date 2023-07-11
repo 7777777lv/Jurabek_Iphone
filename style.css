@@ -1,0 +1,258 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+#iphone {
+  height: 650px;
+  width: 350px;
+  padding: 15px;
+  background-image: url(img/Deep\ Purple.png);
+  background-position: center, center;
+  background-size: cover;
+  border-radius: 45px;
+  position: relative;
+  border: 5px solid grey;
+}
+#clock-display {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-color: black;
+  border-radius: 40px;
+}
+
+.main__menu {
+  padding-top: 45px;
+  position: relative;
+}
+
+.brovi {
+  position: absolute;
+  top: 0;
+  left: 34%;
+  width: 100px;
+  height: 22px;
+  background-color: black;
+  border-radius: 45px;
+  cursor: pointer;
+  transition: 0.5s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brovi .avatar {
+  display: none;
+}
+
+.avatar img {
+  transition: 0.4s;
+  border-radius: 40px;
+}
+
+.avatar .content {
+  transition: 0.4s;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.content span {
+  transition: 0.4s;
+
+  font-size: 12px;
+  color: rgb(130, 130, 130);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content p {
+  transition: 0.4s;
+
+  font-size: 15px;
+  line-height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+.brovi .call-icons {
+  display: none;
+}
+
+.call-icons button {
+  transition: 0.5s;
+  background-color: transparent;
+  border: none;
+}
+
+.brovi:hover {
+  z-index: 1;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 2px 10px 2px black;
+}
+
+.brovi:hover .avatar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brovi:hover .call-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.apps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 6;
+  grid-gap: 15px;
+}
+
+.weather {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 15px;
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.top h5 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.5px;
+  color: white;
+}
+
+.top h5 img {
+  width: 15px;
+}
+
+.top span {
+  font-size: 40px;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 100%;
+}
+
+.bottom img {
+  width: 20px;
+}
+
+.bottom p {
+  font-size: 12px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+.bottom span {
+  font-size: 12px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  margin-right: 5px;
+}
+
+.app {
+  height: 75px;
+  width: 66px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  cursor: pointer;
+}
+
+.app:hover img {
+  transform: scale(0.93);
+  filter: opacity(90%);
+}
+
+.app img {
+  width: 55px;
+  transition: 0.3s;
+}
+
+.app h5 {
+  font-size: 12px;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.7px;
+}
+
+.touch {
+  position: absolute;
+  z-index: 1000000;
+  bottom: 5px;
+  left: 32%;
+  width: 121px;
+  height: 4px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.change-bgc {
+  display: flex;
+  gap: 10px;
+}
+.change-bgc div {
+  width: 100px;
+  height: 35px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.silver {
+  background-color: #46d1ff;
+}
+.space-black {
+  background-color: #004678;
+}
+.gold {
+  background-color: gold;
+}
