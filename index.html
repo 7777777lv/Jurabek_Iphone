@@ -10,13 +10,32 @@
     <main>
       <section id="iphone">
         <div id="clock-display">
-          <div class="time">
-            <span class="hms"></span>
-            <span class="ampm"></span>
+          <div id="clock-toolbar">
+
           </div>
-          <span class="date"></span>
+          <div id="current-time">
+            <div class="clock-bgc">
+              <canvas id="time" width="350" height="350" />
+            </div>
+            <div class="time-date">
+              <div class="hms-ampm">
+                <span class="hms"></span>
+                <span class="ampm"></span>
+              </div>
+              <span class="date"></span>
+            </div>
+          </div>
         </div>
         <div class="main__menu">
+          <div class="toolbar-upper">
+            <div class="toolbar-upper-item">
+              <span id="local-time"></span>
+            </div>
+            <div class="toolbar-upper-item" id="batery">
+              <span>38%</span>
+              <img width="40px" src="img/App-iphone-battery.png" alt="" />
+            </div>
+          </div>
           <div class="brovi">
             <div class="avatar">
               <img width="35px" src="img/najot-talim.jpg" alt="" />
@@ -139,5 +158,6 @@
     </main>
 
     <script src="main.js"></script>
+    <script src="clock.js"></script>
   </body>
 </html>

@@ -5,6 +5,7 @@ const spaceBlack = document.querySelector(".space-black");
 const gold = document.querySelector(".gold");
 const clock = document.querySelector("#clock");
 const clockDisplay = document.querySelector("#clock-display");
+const time_display = document.querySelector("#local-time");
 
 silver.addEventListener("click", function () {
   iphone.style = "background-image: url(img/Silver.png);";
@@ -19,13 +20,12 @@ gold.addEventListener("click", function () {
 });
 
 clock.addEventListener("click", function () {
-  clockDisplay.style = "z-index: 10;";
+  clockDisplay.style = "z-index: 1; display:flex;";
 });
 
 touch.addEventListener("click", function () {
   clockDisplay.style = "z-index: -1;";
 });
-
 
 function updateTime() {
   var dateInfo = new Date();
@@ -95,3 +95,25 @@ updateTime();
 setInterval(function () {
   updateTime();
 }, 1000);
+
+function doubleDigits(num) {
+  return ("0" + num).slice(-2);
+}
+
+// GET LOCAL TIME
+function getCurrentTime() {
+  const NOW = new Date();
+  const HOUR = NOW.getHours();
+  const MINUTES = NOW.getMinutes();
+  const IS_AM = HOUR >= 0 && HOUR < 12;
+  const FULL_TIME = `${HOUR % 12 === 0 ? 12 : HOUR % 12}:${doubleDigits(
+    MINUTES
+  )} ${IS_AM ? "AM" : "PM"}`;
+
+  time_display.textContent = FULL_TIME;
+  clearInterval(getCurrentTime, 1000);
+}
+
+setInterval(getCurrentTime, 1000);
+
+
