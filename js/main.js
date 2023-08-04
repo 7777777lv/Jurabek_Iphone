@@ -1,6 +1,3 @@
-setInterval(function () {
-  loader.style = "z-index: -1000000";
-}, 4000);
 silver.addEventListener("click", function () {
   iphone.style = "background-image: url(img/Silver.png);";
 });
