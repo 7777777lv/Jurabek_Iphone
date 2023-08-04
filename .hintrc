@@ -1,27 +1,16 @@
 {
-  "extends": [
-    "development"
-  ],
+  "extends": ["development"],
   "hints": {
-    "axe/parsing": [
+    "axe/forms": [
       "default",
       {
-        "duplicate-id-active": "off"
+        "select-name": "off"
       }
     ],
     "compat-api/css": [
       "default",
       {
-        "ignore": [
-          "backdrop-filter",
-          "scrollbar-width"
-        ]
-      }
-    ],
-    "axe/forms": [
-      "default",
-      {
-        "select-name": "off"
+        "ignore": ["scrollbar-width"]
       }
     ]
   }
