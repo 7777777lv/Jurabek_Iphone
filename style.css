@@ -202,10 +202,14 @@ main {
 
 .avatar .content {
   transition: 0.4s;
-
   display: flex;
   flex-direction: column;
+  align-items: start;
   gap: 5px;
+}
+
+.avatar .content span {
+  font-size: 14px;
 }
 
 .content span {
@@ -236,7 +240,7 @@ main {
 }
 
 .brovi:hover {
-  z-index: 1;
+  z-index: 1000;
   left: 0;
   width: 100%;
   height: 50px;

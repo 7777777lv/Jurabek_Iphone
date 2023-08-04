@@ -8,5 +8,7 @@ function batteryCallback(batteryObject) {
 function printBatteryStatus(batteryObject) {
   batteryLevel.textContent = batteryObject.level * 100 + "%";
   console.log(`Is this device charging: ${batteryObject.charging}`);
-  console.log(`Battery level is: ${batteryObject.level * 100 + "%"}`);
+  console.log(
+    `Battery level is: ${Math.ceil(batteryObject.level * 100) + "%"}`
+  );
 }
