@@ -13,8 +13,15 @@
       "default",
       {
         "ignore": [
-          "backdrop-filter"
+          "backdrop-filter",
+          "scrollbar-width"
         ]
+      }
+    ],
+    "axe/forms": [
+      "default",
+      {
+        "select-name": "off"
       }
     ]
   }

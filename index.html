@@ -4,14 +4,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Iphone</title>
+    <link rel="icon" href="img/apple-icon.svg" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="loader">
+      <div class="loader-circle"></div>
+      <span class="loader-text">Loading...</span>
+    </div>
     <main>
       <section id="iphone">
+        <div id="lock-screen">
+          <div class="content">
+            <span class="lockscreen-date"></span>
+            <h1 class="lockscreen-time"></h1>
+          </div>
+          <div class="lock-screen-toolbar">
+            <button>
+              <img
+                width="40px"
+                height="40px"
+                src="img/ios-flashlight.svg"
+                alt="flash"
+              />
+            </button>
+            <button>
+              <img
+                width="40px"
+                height="40px"
+                src="img/ios-camera.svg"
+                alt="camera"
+              />
+            </button>
+          </div>
+        </div>
         <div id="clock-display">
+          <div class="stopwatch">
+            <button id="stopwatch-back">
+              <img width="25px" src="./img/back.svg" alt="" />Back
+            </button>
+            <div class="timer-wrapper">
+              <h1 class="timer">00:00.00</h1>
+            </div>
+            <div class="controls">
+              <div class="toggle">
+                <button class="reset-btn">Reset</button>
+                <button class="lap-btn">Lap</button>
+              </div>
+              <div class="toggle">
+                <button class="start-btn">Start</button>
+                <button class="pause-btn">Pause</button>
+              </div>
+            </div>
+            <div class="tracker-wrapper">
+              <div class="tracker"></div>
+            </div>
+          </div>
           <div id="clock-toolbar">
-
+            <ul>
+              <li class="world-clock">
+                <img width="25px" src="img/world-clock-icon.svg" alt="" />World
+                Clock
+              </li>
+              <li class="alarm">
+                <img width="25px" src="img/alarm-icon.svg" alt="" />Alarm
+              </li>
+              <li class="stopwatch-item">
+                <img
+                  width="25px"
+                  src="img/stopwatch-icon.svg"
+                  alt=""
+                />Stopwatch
+              </li>
+              <li class="timer">
+                <img width="25px" src="img/timer icon.svg" alt="" />Timer
+              </li>
+            </ul>
           </div>
           <div id="current-time">
             <div class="clock-bgc">
@@ -25,6 +93,100 @@
               <span class="date"></span>
             </div>
           </div>
+          <div id="alarm">
+            <button class="alarm-back">
+              <img width="25px" src="img/back.svg" alt="" />Back
+            </button>
+            <div class="alarm-block">
+              <img width="100px" src="img/alarm-icon.png" alt="" />
+              <h1 class="alarm-current-time">00:00:00 PM</h1>
+              <div class="time-select">
+                <select id="hour-select">
+                  <option selected value="Hour">Hour</option>
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+                  <option value="06">06</option>
+                  <option value="07">07</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
+                  <option value="010">10</option>
+                  <option value="011">11</option>
+                  <option value="12">12</option>
+                </select>
+                <select id="minute-select">
+                  <option selected value="Minute">Minute</option>
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+                  <option value="06">06</option>
+                  <option value="07">07</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+                  <option value="32">32</option>
+                  <option value="33">33</option>
+                  <option value="34">34</option>
+                  <option value="35">35</option>
+                  <option value="36">36</option>
+                  <option value="37">37</option>
+                  <option value="38">38</option>
+                  <option value="39">39</option>
+                  <option value="40">40</option>
+                  <option value="41">41</option>
+                  <option value="42">42</option>
+                  <option value="43">43</option>
+                  <option value="44">44</option>
+                  <option value="45">45</option>
+                  <option value="46">46</option>
+                  <option value="47">47</option>
+                  <option value="48">48</option>
+                  <option value="49">49</option>
+                  <option value="50">50</option>
+                  <option value="51">51</option>
+                  <option value="52">52</option>
+                  <option value="53">53</option>
+                  <option value="54">54</option>
+                  <option value="55">55</option>
+                  <option value="56">56</option>
+                  <option value="57">57</option>
+                  <option value="58">58</option>
+                  <option value="59">59</option>
+                </select>
+                <select id="ampm-select">
+                  <option selected value="AM/PM">AM/PM</option>
+                  <option value="AM">AM</option>
+                  <option value="PM">PM</option>
+                </select>
+              </div>
+              <button class="set-alarm">Set Alarm</button>
+            </div>
+          </div>
         </div>
         <div class="main__menu">
           <div class="toolbar-upper">
@@ -32,7 +194,7 @@
               <span id="local-time"></span>
             </div>
             <div class="toolbar-upper-item" id="batery">
-              <span>38%</span>
+              <span></span>
               <img width="40px" src="img/App-iphone-battery.png" alt="" />
             </div>
           </div>
@@ -66,6 +228,19 @@
                 <span>L:53°</span>
               </div>
             </div>
+            <button id="clock" class="app">
+              <img width="60px" src="img/clock-icon.svg" alt="clock" />
+              <h5>Clock</h5>
+            </button>
+            <button id="krill-to-lotin" class="app">
+              <img
+                width="60px"
+                height="60px"
+                src="img/translate-icon.svg"
+                alt=""
+              />
+              <h5>Krill-lotin</h5>
+            </button>
             <button id="camera" class="app">
               <img width="60px" src="img/camera-icon.svg" alt="camera-icon" />
               <h5>Camera</h5>
@@ -81,10 +256,6 @@
             <button id="calendar" class="app">
               <img width="60px" src="img/calendar-icon.svg" alt="calendar" />
               <h5>Calendar</h5>
-            </button>
-            <button id="clock" class="app">
-              <img width="60px" src="img/clock-icon.svg" alt="clock" />
-              <h5>Clock</h5>
             </button>
             <button id="facebook" class="app">
               <img src="img/facebook.svg" alt="" />
@@ -142,22 +313,23 @@
               <img src="img/home.svg" alt="" />
               <h5>Home</h5>
             </button>
-            <button id="settings" class="app">
-              <img src="img/settings.svg" alt="" />
-              <h5>Settings</h5>
-            </button>
           </div>
         </div>
-        <div class="touch"></div>
+        <div class="touch">
+          <div class="line"></div>
+        </div>
       </section>
       <div class="change-bgc">
-        <div class="silver">Silver</div>
-        <div class="space-black">Space black</div>
-        <div class="gold">Gold</div>
+        <button class="silver">Silver</button>
+        <button class="space-black">Space black</button>
+        <button class="gold">Gold</button>
       </div>
     </main>
-
-    <script src="main.js"></script>
-    <script src="clock.js"></script>
+    <script src="js/const.js"></script>
+    <script src="js/battery.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/stopwatch.js"></script>
+    <script src="js/alarm.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

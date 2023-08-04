@@ -4,59 +4,89 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+body,
+html {
+  background-image: url(img/bgc.jpg);
+  background-size: cover;
+  background-position: center center;
 }
 
 main {
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 15px;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  position: relative;
 }
 
-.touch {
+.touch {  
   position: absolute;
-  z-index: 100;
+  z-index: 100000;
+  cursor: pointer;
   bottom: 5px;
   left: 32%;
+  padding: 5px 0;
+}
+.touch .line {
   width: 121px;
   height: 4px;
   background-color: #ffffff;
   border-radius: 10px;
-  cursor: pointer;
 }
 
 .change-bgc {
   display: flex;
   gap: 10px;
 }
-.change-bgc div {
-  width: 100px;
+.change-bgc button {
+  border: none;
+  width: 105px;
   height: 35px;
   border-radius: 40px;
   cursor: pointer;
   font-size: 18px;
   color: white;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.3s;
+  cursor: pointer;
 }
 .silver {
   background-color: #46d1ff;
 }
+
+.silver:hover {
+  background-color: rgb(37, 165, 208);
+}
+
 .space-black {
   background-color: #004678;
 }
+
+.space-black:hover {
+  background-color: #003052;
+}
+
 .gold {
   background-color: gold;
 }
 
+.gold:hover {
+  background-color: rgb(211, 180, 0);
+}
+
 #iphone {
-  height: 640px;
+  height: 650px;
   width: 350px;
   padding: 15px;
   background-image: url(img/Deep\ Purple.png);
@@ -65,6 +95,7 @@ main {
   border-radius: 45px;
   position: relative;
   border: 5px solid grey;
+  overflow: hidden;
 }
 
 #clock-display {
@@ -76,6 +107,34 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+#clock-toolbar {
+  padding: 5px 10px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  background-color: rgb(25, 25, 25);
+}
+
+#clock-toolbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#clock-toolbar ul li {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
 }
 
 .clock-bgc {
@@ -91,17 +150,20 @@ main {
   justify-content: center;
   gap: 5px;
 }
+
 .hms {
   font-size: 48px;
   font-weight: 200;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
 }
+
 .ampm {
   font-size: 12px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
 }
+
 .date {
   font-size: 14px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -117,7 +179,7 @@ main {
   position: absolute;
   top: 0;
   left: 34%;
-  z-index: 1000;
+  z-index: 100000;
   width: 100px;
   height: 22px;
   background-color: black;
@@ -307,10 +369,340 @@ main {
   color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
 #batery {
   display: flex;
   align-items: center;
   font-size: 16px;
   color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.stopwatch {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 10px;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#stopwatch-back {
+  position: absolute;
+  top: 60px;
+  width: 70px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+}
+
+.timer {
+  font-weight: 400;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  font-size: 2.4em;
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  justify-content: center;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px 0px 10px 0px;
+  align-items: center;
+}
+
+.controls button {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.controls button:focus {
+  outline: none;
+}
+
+.controls button:hover {
+  filter: opacity(0.8);
+}
+
+.controls button:before {
+  border-radius: 50%;
+  width: 90%;
+  height: 90%;
+  border: 2px solid #111111;
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.controls .reset-btn {
+  display: none;
+}
+
+.controls .reset-btn,
+.lap-btn {
+  background: rgb(94, 94, 94);
+  color: #fff;
+}
+
+.controls .start-btn {
+  background: rgb(2, 36, 2);
+  color: rgb(43, 218, 95);
+}
+
+.controls .pause-btn {
+  display: none;
+  background: rgb(63, 1, 6);
+  color: red;
+}
+
+.tracker-wrapper {
+  height: 90px;
+  overflow: auto;
+  cursor: pointer;
+  position: relative;
+  border-top: 1px solid rgb(94, 94, 94);
+  margin: 15px 0 20px 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.tracker-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.tracker {
+  position: absolute;
+  overflow-y: hidden;
+  top: 0;
+  min-height: 200px;
+  width: 100%;
+  overflow: scroll;
+  background: repeating-linear-gradient(
+    #111,
+    #111 30px,
+    rgb(94, 94, 94) 30px,
+    rgb(94, 94, 94) 31px
+  );
+}
+
+.tracker .lap-data {
+  padding: 5px;
+  height: 31px;
+  display: flex;
+  width: 100%;
+  justify-content: flex-between;
+  align-items: center;
+}
+
+.tracker .lap-data span {
+  font-size: 0.5em;
+  flex: 1;
+  text-align: left;
+  color: white;
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tracker .lap-data span:nth-of-type(2) {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+#alarm {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 10px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.alarm-back {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  width: 70px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+}
+
+.alarm-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.alarm-block h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  font-size: 36px;
+}
+
+.set-alarm {
+  border: none;
+  padding: 10px;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #0093e9;
+  border-radius: 10px;
+}
+
+.time-select select {
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+
+.time-select.disable {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+#lock-screen {
+  padding: 80px 35px 50px;
+  position: absolute;
+  background-image: url(img/Deep\ Purple.png);
+  background-size: cover;
+  background-position: center center;
+  inset: 0;
+  border-radius: 40px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.4s;
+}
+.content {
+  text-align: center;
+}
+.content span {
+  font-size: 18px;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content h1 {
+  margin-top: 5px;
+  letter-spacing: 1px;
+  font-size: 60px;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.lock-screen-toolbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lock-screen-toolbar button {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: #20202059;
+  cursor: pointer;
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background-color: #e0f3ff;
+  inset: 0;
+  z-index: 1000000;
+}
+
+.loader-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.258);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.loader-circle:before {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 8px solid #7e3af2;
+  border-color: #7e3af2 transparent #7e3af2 transparent;
+  animation: loader 1.2s linear infinite;
+}
+
+.loader-text {
+  color: #7e3af2;
+  font-size: 24px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
 }
